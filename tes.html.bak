@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Arjun Verma | Electrical Engineering Portfolio & CV</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f9ff;
+      color: #1e2a41;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    /* custom variables */
+    :root {
+      --primary-dark: #0a2b3e;
+      --primary: #1a5f7a;
+      --accent: #2b8c5e;
+      --accent-light: #e0f2e9;
+      --gray-bg: #f8fafc;
+      --card-white: #ffffff;
+      --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+      --border-light: #e2edf2;
+    }
+
+    /* global */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0a2b3e, #1a5f7a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 56px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 8px rgba(26, 95, 122, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #0e455b;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -10px rgba(26, 95, 122, 0.4);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* navbar */
+    nav {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      border-bottom: 1px solid #eef2f8;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 18px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: linear-gradient(120deg, #0a2b3e, #1e6f5c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e2a41;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* hero */
+    .hero {
+      padding: 70px 0 40px 0;
+      background: linear-gradient(145deg, #ffffff 0%, #f6fafe 100%);
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1.4;
+    }
+
+    .hero-badge {
+      background: #eef2ff;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: #0a2540;
+    }
+
+    .highlight {
+      color: var(--primary);
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #334155;
+      max-width: 550px;
+      margin: 20px 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      flex: 0.8;
+      background: var(--card-white);
+      padding: 28px 24px;
+      border-radius: 36px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e9f0f5;
+    }
+
+    .stat-item {
+      margin-bottom: 18px;
+    }
+
+    .stat-number {
+      font-weight: 800;
+      font-size: 1.7rem;
+      color: var(--primary);
+    }
+
+    /* cards & grids */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #dee9ef;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-tag i {
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 16px;
+    }
+
+    .project-card {
+      background: var(--card-white);
+      border-radius: 28px;
+      padding: 26px;
+      transition: all 0.25s;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+      border-color: #cbdde6;
+    }
+
+    .project-icon {
+      font-size: 2.2rem;
+      background: #eef6fc;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .project-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 12px;
+    }
+
+    .project-tech span {
+      background: #eef2fa;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    /* Experience & education timeline style */
+    .exp-item, .edu-item {
+      background: var(--card-white);
+      padding: 24px;
+      border-radius: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+      border-left: 5px solid var(--primary);
+      transition: 0.2s;
+    }
+
+    .exp-header, .edu-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .exp-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .exp-date {
+      color: #5f6c84;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* contact form */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: var(--card-white);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form {
+      flex: 1.4;
+      background: var(--card-white);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1px solid #dce5ec;
+      font-family: inherit;
+      transition: 0.2s;
+      background: #fff;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.1);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .social-icon {
+      background: #eff3f8;
+      width: 44px;
+      height: 44px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      transition: 0.2s;
+    }
+
+    .social-icon:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: #0a1c2a;
+      color: #bbd1e2;
+      text-align: center;
+      padding: 28px 0;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 780px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      section {
+        padding: 50px 0;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+      .hero-stats {
+        width: 100%;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    .back2top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--primary);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s;
+      border: none;
+      z-index: 99;
+    }
+    .back2top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo"><i class="fas fa-microchip"></i> Arjun.EE</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-bolt"></i> Open to work · Final Year EE</div>
+        <h1>Hi, I'm Arjun Verma <br><span class="highlight">Electrical Engineering</span> (Final Year)</h1>
+        <p class="hero-desc">Passionate about power systems, embedded electronics, and sustainable energy solutions. Seeking full-time roles starting Summer 2026 — ready to engineer the future.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="downloadCVBtn"><i class="fas fa-file-pdf"></i> Download CV</button>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire me</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-number">🎓 3.8/4.0</span><br>CGPA · Merit Scholar</div>
+        <div class="stat-item"><span class="stat-number">🔌 6+</span><br>Industry Projects</div>
+        <div class="stat-item"><span class="stat-number">⚡ 2</span><br>Internships (Power/Embedded)</div>
+        <div class="stat-item"><span class="stat-number">📅 May 2026</span><br>Expected Graduation</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About me</h2>
+      <div style="background: white; border-radius: 32px; padding: 32px; box-shadow: var(--shadow-sm);">
+        <p style="font-size: 1.05rem; margin-bottom: 16px;">I’m a final-year Electrical Engineering undergraduate with a deep curiosity for how energy and electronics shape our world. From designing smart grid prototypes to building embedded IoT systems, I thrive at the intersection of hardware and software. I'm actively looking for graduate roles in power systems, automation, or embedded engineering — bringing both technical depth and creative problem-solving.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+          <span><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> San Francisco, CA / Open to relocate</span>
+          <span><i class="fas fa-language"></i> English, Hindi, German (A2)</span>
+          <span><i class="fas fa-certificate"></i> IEEE Member · Certified PLC Programmer</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="edu-header">
+          <span class="exp-title"><i class="fas fa-graduation-cap" style="margin-right: 8px; color: var(--primary);"></i> B.Sc. in Electrical Engineering</span>
+          <span class="exp-date">2022 – 2026 (Expected)</span>
+        </div>
+        <div><strong>University of Technology, California</strong> · GPA: 3.82/4.0</div>
+        <div style="margin-top: 12px;"><strong>Relevant Coursework:</strong> Power System Analysis, Embedded Systems, Control Theory, Renewable Energy Integration, Digital Signal Processing, Electric Machines, PCB Design.</div>
+        <div style="margin-top: 12px;"><strong>Capstone:</strong> AI-based Fault Detection in Microgrids (Ongoing)</div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title"><i class="fas fa-microchip"></i> Electrical Engineering Intern</span>
+          <span class="exp-date">Summer 2025</span>
+        </div>
+        <div><strong>GridLogic Energy Solutions</strong> · Palo Alto, CA</div>
+        <ul style="margin-top: 12px; margin-left: 20px; color: #2c3e50;">
+          <li>Assisted in load flow analysis for a 12-bus distribution network using ETAP, improving voltage regulation by 8%.</li>
+          <li>Designed low-voltage protection schematics and collaborated with senior engineers on relay coordination.</li>
+          <li>Automated data extraction from SCADA logs using Python, reducing reporting time by 30%.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title"><i class="fas fa-robot"></i> Embedded Systems Research Assistant</span>
+          <span class="exp-date">2024 – Present</span>
+        </div>
+        <div><strong>Renewable Energy & IoT Lab</strong> · University of Technology</div>
+        <ul style="margin-top: 12px; margin-left: 20px;">
+          <li>Developed a low-cost wireless sensor node for photovoltaic panel monitoring using ESP32 and LoRa.</li>
+          <li>Implemented real-time MPPT algorithm in C++, increasing efficiency by ~12% under partial shading.</li>
+          <li>Published a technical report at University Research Symposium 2025.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title"><i class="fas fa-chalkboard-user"></i> IEEE Student Branch · Vice Chair</span>
+          <span class="exp-date">2023 – 2025</span>
+        </div>
+        <div>Organized workshops on PCB design and MATLAB/Simulink for 100+ students; led a team to host “Smart Grid Hackathon”.</div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Technical Arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill-tag"><i class="fab fa-python"></i> Python / C++</div>
+        <div class="skill-tag"><i class="fas fa-microchip"></i> Embedded C / Arduino</div>
+        <div class="skill-tag"><i class="fas fa-chart-line"></i> MATLAB/Simulink</div>
+        <div class="skill-tag"><i class="fas fa-pcb"></i> Altium Designer</div>
+        <div class="skill-tag"><i class="fas fa-plug"></i> PLC Programming (Ladder)</div>
+        <div class="skill-tag"><i class="fas fa-bolt"></i> PowerWorld / ETAP</div>
+        <div class="skill-tag"><i class="fab fa-raspberry-pi"></i> Raspberry Pi / ESP32</div>
+        <div class="skill-tag"><i class="fas fa-chart-simple"></i> Data Analysis (Pandas)</div>
+        <div class="skill-tag"><i class="fas fa-industry"></i> AutoCAD Electrical</div>
+        <div class="skill-tag"><i class="fas fa-solar-panel"></i> PVsyst / Renewable Energy</div>
+      </div>
+      <div style="margin-top: 32px;">
+        <h3 style="margin-bottom: 16px;">Soft Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-tag">Team Leadership</div>
+          <div class="skill-tag">Technical Documentation</div>
+          <div class="skill-tag">Critical Thinking</div>
+          <div class="skill-tag">Agile Collaboration</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (Portfolio) -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-solar-panel"></i></div>
+          <h3>Smart Solar Tracker with MPPT</h3>
+          <p>Dual-axis solar tracker using LDR sensors, servo motors, and ESP32. Implemented perturb & observe MPPT algorithm to optimize energy harvest.</p>
+          <div class="project-tech"><span>Arduino</span><span>C++</span><span>IoT</span><span>MPPT</span></div>
+          <i class="fas fa-github" style="margin-top: 12px; display: inline-block; cursor: pointer;" onclick="alert('GitHub repo: github.com/arjun-ee/solar-tracker')"></i>
+        </div>
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-charging-station"></i></div>
+          <h3>EV Charging Station Simulator</h3>
+          <p>MATLAB/Simulink model of a DC fast charging station with grid-to-vehicle integration. Analyzed power quality under varying loads.</p>
+          <div class="project-tech"><span>MATLAB</span><span>Simulink</span><span>Power Electronics</span></div>
+          <i class="fas fa-external-link-alt" style="margin-top: 12px; cursor: pointer;" onclick="alert('Project demo video available upon request')"></i>
+        </div>
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-microchip"></i></div>
+          <h3>PCB Design – Buck Converter</h3>
+          <p>Designed a 5V/3A synchronous buck converter using Altium Designer, performed signal integrity analysis, and fabricated prototype.</p>
+          <div class="project-tech"><span>Altium</span><span>KiCad</span><span>SMPS</span></div>
+          <i class="fas fa-file-pdf" style="margin-top: 12px; cursor: pointer;" onclick="alert('Schematic & layout available in portfolio PDF')"></i>
+        </div>
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <h3>Wireless Power Monitoring System</h3>
+          <p>End-to-end IoT system using ESP8266, current sensors (ACS712) and Blynk dashboard for real-time energy consumption tracking.</p>
+          <div class="project-tech"><span>ESP8266</span><span>Blynk</span><span>Arduino IDE</span></div>
+          <i class="fas fa-github" style="margin-top: 12px; cursor: pointer;" onclick="alert('Code & wiring: github.com/arjun-ee/power-monitor')"></i>
+        </div>
+      </div>
+      <div style="margin-top: 32px; background: #eef5fc; border-radius: 28px; padding: 22px; text-align: center;">
+        <i class="fas fa-microscope" style="font-size: 1.8rem; color: var(--primary);"></i>
+        <h3 style="margin: 8px 0;">🎓 Final Year Capstone Project</h3>
+        <p><strong>AI-Based Fault Detection in Transmission Lines</strong> · Using wavelet transform & neural networks (Python/TensorFlow) to classify faults with 96% accuracy.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3 style="margin-bottom: 20px;"><i class="fas fa-envelope"></i> Get in touch</h3>
+          <p><i class="fas fa-envelope" style="width: 28px;"></i> arjun.verma@ee.student.edu</p>
+          <p><i class="fas fa-phone-alt"></i> +1 (415) 876-2390</p>
+          <p><i class="fab fa-linkedin"></i> linkedin.com/in/arjun-ee</p>
+          <p><i class="fab fa-github"></i> github.com/arjun-ee</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" onclick="alert('LinkedIn: linkedin.com/in/arjun-ee')"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon" onclick="alert('GitHub: github.com/arjun-ee')"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon" onclick="alert('Email me at arjun.verma@ee.student.edu')"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send a message</h3>
+          <form id="contactForm">
+            <div class="input-group"><input type="text" placeholder="Full name" id="nameInput" required></div>
+            <div class="input-group"><input type="email" placeholder="Email address" id="emailInput" required></div>
+            <div class="input-group"><textarea rows="4" placeholder="Tell me about an opportunity or collaboration..." id="msgInput"></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+          <p style="margin-top: 16px; font-size: 0.8rem; color: #5c6f87;"><i class="fas fa-lock"></i> I’ll reply within 48 hours.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Arjun Verma — Electrical Engineering Portfolio. Ready to innovate and power tomorrow’s infrastructure.</p>
+    <p style="margin-top: 8px;"><i class="fas fa-certificate"></i> Available for full-time roles from June 2026 · Let's build something impactful.</p>
+  </div>
+</footer>
+
+<button class="back2top" id="back2topBtn"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if(target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Download CV dummy interaction (professional alert + placeholder)
+  const downloadBtn = document.getElementById('downloadCVBtn');
+  if(downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      alert("📄 Thank you for your interest! Please email arjun.verma@ee.student.edu to request my full CV (PDF). I'll respond within 24h with the latest version.");
+    });
+  }
+
+  // Contact form handler
+  const contactForm = document.getElementById('contactForm');
+  if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('nameInput')?.value.trim();
+      const email = document.getElementById('emailInput')?.value.trim();
+      const msg = document.getElementById('msgInput')?.value.trim();
+      if(!name || !email) {
+        alert("Please fill in name and email address.");
+        return;
+      }
+      alert(`✨ Thanks ${name}, your message has been sent! I'll get back to you soon at ${email}.`);
+      contactForm.reset();
+    });
+  }
+
+  // Back to top button logic
+  const backBtn = document.getElementById('back2topBtn');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 400) {
+      backBtn.classList.add('show');
+    } else {
+      backBtn.classList.remove('show');
+    }
+  });
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // small interactive demo: project click placeholders already handled
+  // extra style: dynamic year footer?
+  const yearSpan = document.querySelector('footer p:first-child');
+  if(yearSpan) {
+    // already fine
+  }
+</script>
+</body>
+</html>
