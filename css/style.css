@@ -168,12 +168,26 @@ nav {
 }
 .hero-stats {
   flex: 0.8;
-  background: var(--card-white);
-  padding: 28px 24px;
-  border-radius: 36px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid #e3eef5;
+  padding: 0;                 /* optional */
+  background: transparent;     /* remove bg */
+  border: none;               /* remove border */
+  box-shadow: none;           /* remove shadow */
+  border-radius: 0;           /* optional */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.hero-avatar{
+  /* change to responsive sizing */
+  width: min(260px, 100%);
+  height: auto;         /* keeps aspect ratio */
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 24px;  /* optional: nice rounded corners */
+  display: block;
+}
+
 .stat-item {
   margin-bottom: 18px;
   font-weight: 500;

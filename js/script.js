@@ -17,7 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const downloadBtn = document.getElementById('downloadCVBtn');
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
-      alert("📄 Hi! Send an email to hafidzhhabsy04@gmail.com requesting my full CV, and I'll share the latest version within 24 hours.");
+      // Open/download the CV file
+      const cvUrl = 'files/my_cv.pdf';
+      const a = document.createElement('a');
+      a.href = cvUrl;
+      a.download = 'Muhammad_Hafidzh_CV.pdf'; // change filename if you want
+      a.target = '_blank';
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
     });
   }
 
@@ -26,14 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
       const name = document.getElementById('nameInput')?.value.trim();
       const email = document.getElementById('emailInput')?.value.trim();
+      const phone = document.getElementById('phoneInput')?.value.trim(); // add
       const msg = document.getElementById('msgInput')?.value.trim();
+
       if (!name || !email) {
         alert("Please fill in your name and email address.");
         return;
       }
-      alert(`✨ Thanks ${name}, I've received your message. I'll get back to you at ${email} soon.`);
+
+      const to = 'hafidzhhabsyi04@gmail.com'; // set to your real email
+      const subject = encodeURIComponent(`Portfolio message from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '(not provided)'}\n\nMessage:\n${msg || '(no message)'}`
+      );
+
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
       contactForm.reset();
     });
   }
