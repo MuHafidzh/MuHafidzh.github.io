@@ -7,3 +7,5 @@ cv/*.fdb_latexmk
 cv/*.synctex.gz
 .DS_Store
 Thumbs.db
+files/
+.md
