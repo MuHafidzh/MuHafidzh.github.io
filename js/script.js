@@ -1,83 +1,56 @@
 // js/script.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scroll for navigation links
-  const navLinks = document.querySelectorAll('.nav-links a');
-  navLinks.forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  // Smooth scroll + close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetId = href.substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
+      navLinks?.classList.remove('open');
+      navToggle?.setAttribute('aria-expanded', 'false');
     });
   });
 
-  // Download CV button (simulate contact request)
-  const downloadBtn = document.getElementById('downloadCVBtn');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', () => {
-      // Use absolute path for GitHub Pages reliability
-      const cvUrl = '/files/my_cv.pdf';
+  // Footer year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
 
-      // Open in new tab (more reliable than a.download on GitHub Pages)
-      const newTab = window.open(cvUrl, '_blank', 'noopener,noreferrer');
-
-      // Popup blocked fallback: navigate in same tab
-      if (!newTab) window.location.href = cvUrl;
-    });
+// Lightbox
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  if (lb && img) {
+    img.src = src;
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
+}
 
-  // Contact form handler
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById('nameInput')?.value.trim();
-      const email = document.getElementById('emailInput')?.value.trim();
-      const phone = document.getElementById('phoneInput')?.value.trim();
-      const msg = document.getElementById('msgInput')?.value.trim();
-
-      if (!name || !email) {
-        alert("Please fill in your name and email address.");
-        return;
-      }
-
-      const to = 'hafidzhhabsyi04@gmail.com';
-      const subject = encodeURIComponent(`Portfolio message from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '(not provided)'}\n\nMessage:\n${msg || '(no message)'}`
-      );
-
-      const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
-
-      // Try to open mail client
-      window.location.href = mailto;
-
-      // Fallback info (in case user has no mail client configured)
-      setTimeout(() => {
-        alert(`If your email app didn't open, please email me at: ${to}`);
-      }, 700);
-
-      contactForm.reset();
-    });
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
   }
+}
 
-  // Back to top button logic
-  const backBtn = document.getElementById('back2topBtn');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) backBtn.classList.add('show');
-    else backBtn.classList.remove('show');
-  });
-  backBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Optional: Add dynamic year in footer
-  const footerYear = document.querySelector('footer .container p:first-child');
-  if (footerYear) {
-    const year = new Date().getFullYear();
-    footerYear.innerHTML = `© ${year} Muhammad Hafidzh — Electrical Engineering & Robotics Portfolio. Ready for full‑time opportunities starting 2026.`;
-  }
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
 });

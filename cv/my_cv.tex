@@ -1,0 +1,273 @@
+%-------------------------
+% Modern ATS-Friendly CV in LaTeX
+% Clean Version - Safe Compilation & Optimized Verbs
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Define accent color - Solid Black
+\usepackage{xcolor}
+\definecolor{ACCENT_COLOR}{RGB}{0, 0, 0} 
+
+% Sections formatting
+\titleformat{\section}{
+\vspace{-4pt}\scshape\raggedright\large\bfseries\color{ACCENT_COLOR}
+}{}{0em}{}[\color{ACCENT_COLOR}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\customItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\customSubHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\customProject}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\customSubHeadingContentStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\customSubHeadingContentEnd}{\end{itemize}}
+\newcommand{\customItemListStart}{\begin{itemize}}
+\newcommand{\customItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape \color{ACCENT_COLOR} Muhammad Hafidzh} \\ \vspace{4pt}
+
+    \small
+    \href{tel:+6281379323224}{\raisebox{-0.1\height}\faPhone\ 6281379323224} |
+    \href{mailto:hafidzhhabsyi04@gmail.com}{\raisebox{-0.1\height}\faEnvelope\ hafidzhhabsyi04@gmail.com} |
+    \href{https://linkedin.com/in/muhammadhafidzh}{\raisebox{-0.1\height}\faLinkedin\ LinkedIn} |
+    \href{https://github.com/MuHafidzh}{\raisebox{-0.1\height}\faGithub\ GitHub} |
+    \href{https://muhafidzh.github.io/}{\raisebox{-0.1\height}\faGlobe\ Portfolio}
+    \vspace{-6pt}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{SUMMARY}
+Electrical Engineering student at Sepuluh Nopember Institute of Technology (ITS) with hands-on experience in embedded systems, robotics, and autonomous vehicle development. Experienced in embedded firmware, real-time control, and vehicular communication networks through industrial internships, laboratory research, and national robotics competitions. Active researcher in the ITS Electronics Laboratory and former technical leader of the RIVAL ITS Robotics Team
+\vspace{-2pt}
+
+%-----------SKILLS-----------
+\section{SKILLS}
+\begin{itemize}[noitemsep, left=0pt]
+    \item \textbf{Languages:} C/C++, Python, MATLAB, Verilog, JavaScript
+    \item \textbf{Embedded Systems \& Hardware:} STM32, ESP32, AVR, 8051, FPGA
+    \item \textbf{Protocols:} CAN, RS485, UART, I2C, SPI, Ethernet/WiFi UDP/TCP, EtherCAT
+    \item \textbf{Tools \& Frameworks:} Linux, ROS/ROS2, ESP-IDF, STM32CubeIDE, ArduinoIDE, PlatformIO, Qt, KiCAD, Eagle, VSCode, Git
+    \item \textbf{Soft Skills:} Fast Learning, Critical Thinking, Good Communication, Problem Solving, Teamwork, Leadership \& People Management
+\end{itemize}
+\vspace{-13pt}
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+\customSubHeadingContentStart
+
+\customSubHeading
+{Electrical Engineering Intern}{Aug 2025 | Dec 2025}
+{CV Manufaktur Robot Industri}{}
+\customItemListStart
+\customItem{\textbf{Autonomous Towing:} Executed electrical wiring and implemented steering firmware on STM32 microcontrollers communicating via EtherCAT to a Beckhoff PC controller.
+}
+\customItem{\textbf{Pipe Inspection Robot:} Implemented low-level motor control firmware and integrated UART communication protocols for pipeline telemetry.
+}
+\customItem{\textbf{Palm Oil Tank Robot:} Developed firmware for an agricultural mobile robot interfacing an Oto spectrometer sensor for automated fungus inspection.
+}
+\customItemListEnd
+
+\customSubHeading
+{Research Intern}{Jan 2025 | Feb 2025}
+{Pusat Riset Mekatronika Cerdas | Badan Riset dan Inovasi Nasional (BRIN)}{}
+\customItemListStart
+\customItem{Designed the embedded hardware architecture for a visually impaired assistant robot.
+}
+\customItem{Implemented ROS nodes on an NVIDIA Jetson Orin to coordinate Dynamixel servos and vibration motors.
+}
+\customItemListEnd
+
+\customSubHeading
+{Head of Internal Division}{Dec 2024 | Dec 2025}
+{Microelectronics and Embedded Systems Laboratory (MEST)}{}
+\customItemListStart
+\customItem{Coordinated internal laboratory operations and assistant development activities.
+}
+\customItem{Organized internal events and team-building programs to strengthen collaboration among laboratory assistants.
+}
+\customItemListEnd
+
+\customSubHeadingContentEnd
+\vspace{-10pt}
+
+%-----------ORGANIZATIONAL EXPERIENCE-----------
+\section{ORGANIZATIONAL EXPERIENCE}
+\customSubHeadingContentStart
+
+\customSubHeading
+{Head of Programming Division}{Aug 2023 | Aug 2025}
+{RIVAL ITS Robotics Team}{}
+\customItemListStart
+\customItem{Directed technical division activities, coordinated task planning, and led embedded software development for competition robots.
+}
+\customItemListEnd
+
+\customSubHeading
+{Expert Staff of Research \& Technology Division}{May 2024 | May 2025}
+{ITS Robotics Student Activity Unit (UKM Robotika ITS)}{}
+\customItemListStart
+\customItem{Organized advanced technical workshops on Robot Operating System (ROS/ROS2) and embedded systems for new laboratory members.
+}
+\customItemListEnd
+
+\customSubHeading
+{Staff of Electrical \& Programming Division}{Dec 2022 | Aug 2023}
+{RIVAL ITS Robotics Team}{}
+\customItemListStart
+\customItem{Supported hardware integration, wire harness assembly, power distribution, and embedded firmware validation for competition robots.
+}
+\customItemListEnd
+
+\customSubHeadingContentEnd
+\vspace{-10pt}
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+\vspace{-5pt}
+\customSubHeadingContentStart
+
+\customProject
+{\textbf{Autonomous Vehicle ITS}}
+{Aug 2025 | Present}
+\customItemListStart
+\customItem{Engineered an embedded vehicle control infrastructure via CAN bus to enable external control of vehicle steering, throttle, and braking.
+}
+\customItem{Designed an asymmetric PID controller for smooth longitudinal speed regulation.
+}
+\customItem{Designed an adaptive dynamic look-ahead Pure Pursuit algorithm for stable vehicle path tracking.
+}
+\customItemListEnd
+\vspace{-13pt}
+
+\customProject
+{\textbf{Basketball Robot (Indonesian Robot Contest - Abu Robocon Division, 2025)}}
+{2025}
+\customItemListStart
+\customItem{Implemented STM32-based control software for the ball-throwing mechanism and high-speed robot kinematics, synchronizing distributed controllers through CAN bus, UART, and Ethernet UDP.
+}
+\customItemListEnd
+\vspace{-13pt}
+
+\customProject
+{\textbf{Waste Sorting \& Feeder Robot (Indonesian Robot Contest – Thematic Division, 2024)}}
+{2024}
+\customItemListStart
+\customItem{Implemented STM32-based kinematic control and ROS1 integration on Jetson TX2 to support autonomous navigation and manual operation.
+}
+\customItemListEnd
+\vspace{-13pt}
+
+\customProject
+{\textbf{RAISA (Robot Medical Assistant ITS-Airlangga)}}
+{2024}
+\customItemListStart
+\customItem{Implemented STM32 firmware for a 3-omniwheel mobile base, developed RS485 communication for JK Smart BMS diagnostics, and integrated CANopen-based BLDC motor drivers using ZLAC8015D controllers.
+}
+\customItemListEnd
+\vspace{-13pt}
+
+\customProject
+{\textbf{FPGA Hardware Accelerator for Motor Control}}
+{2024}
+\customItemListStart
+\customItem{Designed a hardware-level PID controller using Verilog HDL for deterministic DC motor control.
+}
+\customItemListEnd
+\vspace{-13pt}
+
+\customProject
+{\textbf{Digital-Twin Robot (Indonesian Robot Contest – Thematic Division, 2023)}}
+{2023}
+\customItemListStart
+\customItem{Designed a custom power distribution PCB, established electrical layouts, and completed wire harness integration for a 4-wheel omniwheel robot platform.
+}
+\customItemListEnd
+
+\customSubHeadingContentEnd
+\vspace{-3pt}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\customSubHeadingContentStart
+\customSubHeading
+{Institut Teknologi Sepuluh Nopember}{2022 | Present}
+{Bachelor of Science in Electrical Engineering, GPA: 3.86/4.00}{}
+\vspace{8pt}
+
+\customSubHeading
+{MAN Insan Cendekia OKI}{2019 | 2022}
+{High School Diploma in Natural Sciences (IPA)}{}
+\customSubHeadingContentEnd
+\vspace{-5pt}
+
+%-----------ACHIEVEMENTS-----------
+\section{ACHIEVEMENTS}
+\begin{itemize}[itemsep=-3pt, left=0pt]
+    \item \textbf{1st Place \& Best Strategy Award (National Level)}, Indonesian Robot Contest -- ABU Robocon Division (2025)
+    \item \textbf{1st Place (National Level)}, Indonesian Robot Contest -- Thematic Division (2024)
+    \item \textbf{4th Place (National Level) \& 2nd Place (Regional Level)}, Indonesian Robot Contest -- Thematic Division (2023)
+    \item \textbf{1st Place}, Physics Olympiad, National Science Competition (KSN), South Sumatra Province (2021)
+    \item \textbf{3rd Place}, Physics Olympiad, National Science Competition (KSN), Ogan Komering Ilir Regency (2021)
+\end{itemize}
+
+\end{document}

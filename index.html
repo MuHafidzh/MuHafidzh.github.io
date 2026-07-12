@@ -1,253 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Muhammad Hafidzh · Electrical Engineer | Robotics & Embedded Systems</title>
-  <!-- Google Fonts + Font Awesome 6 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Muhammad Hafidzh — Embedded Systems & Robotics</title>
+<meta name="description" content="Electrical Engineering student at Institut Teknologi Sepuluh Nopember. Embedded systems, robotics, and autonomous vehicle development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
-<nav>
+<nav id="siteNav">
   <div class="nav-container">
-    <div class="logo"><i class="fas fa-microchip"></i> Muhammad Hafidzh<span style="font-weight:400;"> | Portofolio</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
+    <a href="#home" class="logo">MUHAMMAD HAFIDZH</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#resume" class="nav-cta">Resume</a></li>
     </ul>
   </div>
 </nav>
 
 <main>
-  <!-- Hero Section with dynamic stats -->
-  <section id="about">
-    <div class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge"><i class="fas fa-robot"></i> About Me</div>
-          <h1>Muhammad Hafidzh <br>
-            <!-- <span class="highlight">Undergraduate Electrical Engineering</span></h1> -->
-          <p class="hero-desc">I'm an electrical engineering undergraduate at Sepuluh Nopember Institute of Technology (ITS) with a strong focus on robotics, embedded systems, and control architectures. I thrive on solving real-world problems — from designing autonomous waste-sorting robots to building medical assistant platforms. My experience spans STM32/ESP32 programming, ROS1/ROS2, sensor fusion, PCB design, and team leadership in national-level robotics competitions.</p>
-          <div class="hero-actions">
-            <button class="btn btn-primary" id="downloadCVBtn"><i class="fas fa-file-pdf"></i> Download CV</button>
-            <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact me</a>
-          </div>
-        </div>
-        <div class="hero-stats">
-            <img src="images/Foto.jpg" alt="Muhammad Hafidzh photo" class="hero-avatar">
-        </div>
-      </div>
-    </div>
-    </section>
 
-  <div class="container">
-    <!-- About / Summary -->
-    <!-- <section id="about">
-      <h2 class="section-title">About me</h2>
-      <div class="about-card">
-        <div class="about-text">
-          <p>I'm an electrical engineering undergraduate at Sepuluh Nopember Institute of Technology (ITS) with a strong focus on robotics, embedded systems, and control architectures. I thrive on solving real-world problems — from designing autonomous waste-sorting robots to building medical assistant platforms. My experience spans STM32/ESP32 programming, ROS1/ROS2, sensor fusion, PCB design, and team leadership in national-level robotics competitions.</p>
-          <div class="about-details">
-            <span><i class="fas fa-map-marker-alt"></i> Palembang, South Sumatra, Indonesia</span>
-            <span><i class="fas fa-trophy"></i> National Robotics Champion 2024</span>
-            <span><i class="fas fa-microchip"></i> RIVAL Robotics Team (2022–Present)</span>
-          </div>
-        </div>
-        <div class="about-avatar">
-          <img src="https://ui-avatars.com/api/?background=1a5f7a&color=fff&name=M+H&size=128&rounded=true&bold=true" alt="Muhammad Hafidzh avatar">
+  <!-- ============ HOME ============ -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <p class="eyebrow">EE · ITS</p>
+        <h1>Muhammad<br>Hafidzh</h1>
+        <p class="hero-role">Electrical Engineering Student</p>
+        <p class="hero-sub">I write embedded firmware on STM32 and ESP32, work with CAN bus and UART, and build control systems for robots and autonomous vehicles. I compete in national robotics competitions and have interned at an industrial robotics company and a national research institute.</p>
+        <div class="hero-actions">
+          <a href="#resume" class="btn btn-primary">Resume</a>
+          <a href="#projects" class="btn btn-outline">Projects</a>
         </div>
       </div>
-    </section> -->
-
-    <!-- Education -->
-    <section id="education">
-      <h2 class="section-title">Education</h2>
-      <div class="edu-item">
-        <div class="exp-header">
-          <span class="exp-title"><i class="fas fa-graduation-cap"></i> Bachelor of Electrical Engineering</span>
-          <span class="exp-date">2022 – Present (Expected 2026)</span>
-        </div>
-        <div><strong>Institut Teknologi Sepuluh Nopember (ITS)</strong> · Surabaya, Indonesia</div>
-        <div class="edu-detail">GPA: 3.89/4.0 · Specialization: Robotics & Control Systems, Embedded AI</div>
-        <div class="course-list">Relevant coursework: Microcontroller Programming, Robotics, Control Systems, PCB Design, Autonomous Vehicles.</div>
-      </div>
-      <div class="edu-item">
-        <div class="exp-header">
-          <span class="exp-title"><i class="fas fa-flask"></i> Natural Science</span>
-          <span class="exp-date">2019 – 2022</span>
-        </div>
-        <div><strong>MAN Insan Cendekia OKI</strong> · Ogan Komering Ilir</div>
-        <div>Physics Olympiad team member, National Science Competition medalist.</div>
-      </div>
-    </section>
-
-    <!-- Experience (Organizations & Roles) -->
-    <section id="experience">
-      <h2 class="section-title">Experience & Leadership</h2>
-      <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-title"><i class="fas fa-tasks"></i> Microelectronics and Embedded System Laboratory</span>
-          <span class="exp-date">2024 – Present</span>
-        </div>
-        <div>Faculty of Electrical Engineering, ITS</div>
-        <ul><li>Guided students in experiments and troubleshooting techniques of electronic theory.</li></ul>
-      </div>
-      <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-title"><i class="fas fa-microchip"></i> Robotics Research Team – RIVAL</span>
-          <span class="exp-date">2022 – Present</span>
-        </div>
-        <div>Head of Programming Division</div>
-        <ul>
-          <li>Developed autonomous navigation stack for KRTMI competition robots using ROS1/ROS2, LiDAR odometry, and sensor fusion.</li>
-          <li>Programmed STM32 for motor kinematics (omniwheel & differential drive), UART master-slave communication, and CAN bus interfacing.</li>
-          <li>Integrated computer vision (OpenCV) with Jetson TX2 for waste sorting robot, achieving 95% detection accuracy.</li>
+      <div class="hero-portrait">
+        <img src="images/Foto.png" alt="Muhammad Hafidzh" class="portrait-img">
+        <ul class="hero-links">
+          <li><a href="https://linkedin.com/in/muhammadhafidzh" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/muhafidzh" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></li>
+          <li><a href="mailto:hafidzhhabsy04@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          <li><a href="tel:+6281379322324"><i class="fa-solid fa-phone"></i> Phone</a></li>
         </ul>
       </div>
-      <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-title"><i class="fas fa-chalkboard-user"></i> Expert Staff Research & Technology</span>
-          <span class="exp-date">2024 – 2025</span>
-        </div>
-        <div>ITS Robotics Student Activity Unit</div>
-        <ul><li>Mentored junior members in embedded C, PCB design (KiCad), and ROS fundamentals; organized workshops for 40+ students.</li></ul>
-      </div>
-      <!-- <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-title"><i class="fas fa-tasks"></i> Staff – Paper Competition BARONAS 2024 & Mentorship OKKBK</span>
-          <span class="exp-date">2023 – 2024</span>
-        </div>
-        <div>Faculty of Electrical Engineering, ITS</div>
-        <ul><li>Coordinated competition logistics and facilitated student orientation programs for 200+ new EE students.</li></ul>
-      </div> -->
-      <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-title"><i class="fas fa-atom"></i> Physics Olympiad Team</span>
-          <span class="exp-date">2019 – 2021</span>
-        </div>
-        <div>MAN Insan Cendekia OKI · Competed at provincial & national level (KSN).</div>
-      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about">
+      <p class="eyebrow">About</p>
+      <p class="about-text">I am an Electrical Engineering student at Institut Teknologi Sepuluh Nopember (ITS). I spend my time building embedded systems for robots writing firmware on STM32 and ESP32 microcontrollers, working with communication protocols like CAN bus, RS485, and UART, and designing control loops that make machines behave the way they should. I joined the RIVAL ITS robotics team in 2022 and have been competing in the Indonesian Robot Contest (KRI) since then. During my studies, I interned at CV Manufaktur Robot Industri where I worked on autonomous towing systems, pipe inspection robots, and agricultural robots, and at BRIN researching assistive robotics platforms.</p>
     </section>
 
-    <!-- Achievements (Awards) -->
-    <section id="achievements">
-      <h2 class="section-title">🏆 National & Regional Awards</h2>
-      <div class="achievements-grid">
-        <div class="achievement-card"><i class="fas fa-trophy" style="color:#ffb347;"></i><h3>1st Place KRTMI National</h3><p>Indonesian Robot Contest (KRI) 2024 · PUSPRESNAS</p></div>
-        <div class="achievement-card"><i class="fas fa-medal"></i><h3>4th Place KRTMI National</h3><p>Indonesian Robot Contest (KRI) 2023</p></div>
-        <div class="achievement-card"><i class="fas fa-award"></i><h3>2nd Place KRTMI Regional</h3><p>KRI Regional Level 2023</p></div>
-        <div class="achievement-card"><i class="fas fa-star"></i><h3>1st Physics Olympiad (Province)</h3><p>KSN South Sumatra 2021 · PUSPRESNAS</p></div>
-        <div class="achievement-card"><i class="fas fa-star-of-life"></i><h3>3rd Physics Olympiad (Regency)</h3><p>KSN Ogan Komering Ilir 2021</p></div>
-      </div>
-    </section>
-
-    <!-- Skills (Hard & Soft) -->
-    <section id="skills">
-      <h2 class="section-title">Technical Arsenal</h2>
-      <div class="skills-category">
-        <h3><i class="fas fa-microchip"></i> Embedded & Robotics</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">STM32</span><span class="skill-tag">ESP32/Arduino</span><span class="skill-tag">ROS1 / ROS2</span>
-          <span class="skill-tag">C / C++ / Python</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Verilog / VHDL</span>
-          <span class="skill-tag">Basic Web Development</span><span class="skill-tag">Autonomous Systems</span>
+    <!-- ============ FEATURED PROJECT ============ -->
+    <section id="featured" class="featured">
+      <p class="eyebrow">Featured Project</p>
+      <div class="featured-card">
+        <div class="featured-media">
+          <img src="images/omodae5hoho.jpeg" alt="Cherry Omoda E5 autonomous vehicle platform" class="featured-img" loading="lazy">
         </div>
-      </div>
-      <div class="skills-category">
-        <h3><i class="fas fa-pcb"></i> Hardware & Design</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">KiCad (PCB Layout)</span><span class="skill-tag">Electronic Circuit Design</span>
-          <span class="skill-tag">Electrical Wiring</span><span class="skill-tag">CAN bus / RS485</span>
-          <span class="skill-tag">BLDC Motor Control</span><span class="skill-tag">UART / SPI / I2C</span>
-        </div>
-      </div>
-      <div class="skills-category">
-        <h3><i class="fas fa-users"></i> Soft Skills</h3>
-        <div class="skills-grid">
-          <span class="skill-tag">Fast Learning</span><span class="skill-tag">Critical Thinking</span>
-          <span class="skill-tag">Teamwork & Leadership</span><span class="skill-tag">Problem Solving</span>
-          <span class="skill-tag">Technical Documentation</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects (from slide content) -->
-    <section id="projects">
-      <h2 class="section-title">🤖 Robotics & Engineering Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-robot"></i></div>
-          <h3>Robot Pemilah Sampah</h3>
-          <p>Autonomous waste sorting robot for KRTMI 2024. Uses conveyor belt + 5 waste categories. STM32 kinematics, ROS1 Noetic on Jetson TX2, LiDAR + odometry fusion via complementary filter, object detection subscription.</p>
-          <div class="project-tech"><span>STM32</span><span>ROS1</span><span>Jetson TX2</span><span>LiDAR</span><span>OpenCV</span></div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-gamepad"></i></div>
-          <h3>Robot Digital Twin</h3>
-          <p>Remote-controlled robot via PS4 joystick (Bluetooth + ESP32). 4 omniwheel drive, STM32 master controller. Designed PCB supply management and electrical wiring for motors, servo, battery system.</p>
-          <div class="project-tech"><span>ESP32</span><span>STM32</span><span>KiCad</span><span>Bluetooth</span><span>Omniwheel</span></div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-fill-drip"></i></div>
-          <h3>Robot Pengumpan (Feeder)</h3>
-          <p>Feeder robot for KRTMI 2024: transfers waste to vibrating conveyor. STM32 3‑omniwheel kinematics, UART master-slave (STM32 ↔ ESP32), PS5 joystick control via Bluetooth on ESP32.</p>
-          <div class="project-tech"><span>STM32</span><span>ESP32</span><span>UART</span><span>Joystick Control</span></div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-stethoscope"></i></div>
-          <h3>RAISA – Robot Medical Assistant</h3>
-          <p>ITS-Airlangga collaborative project. Programmed STM32 for 3‑omniwheel kinematics, RS485 communication with JK BMS, CANopen (ZItech ZLAC8015D) for BLDC motors, UDP over Ethernet.</p>
-          <div class="project-tech"><span>STM32</span><span>CANopen</span><span>BLDC</span><span>RS485</span><span>UDP</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <h3><i class="fas fa-address-card"></i> Reach out directly</h3>
-          <p><i class="fas fa-envelope"></i> hafidzhhabsy04@gmail.com</p>
-          <p><i class="fas fa-phone-alt"></i> +62 813-7932-2324</p>
-          <p><i class="fab fa-linkedin"></i> linkedin.com/in/muhammadhafidzh</p>
-          <p><i class="fas fa-map-marker-alt"></i> Yaktapena 2 Residence 17B, Palembang, Indonesia</p>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/muhammadhafidzh" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:hafidzhhabsy04@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/muhafidzh" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <div class="featured-body">
+          <h2>Autonomous Vehicle — Cherry Omoda E5</h2>
+          <p class="featured-meta">Final Project · Electrical Engineering · ITS · 2025–Present</p>
+          <p>For my final project I contributed to converting a stock Cherry Omoda E5 into an autonomous research platform. I reverse-engineered the CAN bus to map steering, throttle, and braking signals, then designed an electronic actuator interface that lets a computer take over vehicle controls. The control layer uses asymmetric PID for longitudinal speed regulation and adaptive Pure Pursuit for path tracking, with redundant safety checks so the vehicle can always be brought back under manual control.</p>
+          <div class="featured-tags">
+            <span>CAN Bus</span><span>PID Control</span><span>Pure Pursuit</span><span>Actuator Interface</span><span>Safety Systems</span><span>STM32</span>
+          </div>
+          <div class="featured-actions">
+            <a href="#featured-gallery" class="btn btn-outline btn-sm">Gallery</a>
+            <a href="#featured-video" class="btn btn-outline btn-sm">Video</a>
           </div>
         </div>
-        <div class="contact-form">
-          <h3>Send a message</h3>
-          <form id="contactForm">
-            <div class="input-group"><input type="text" placeholder="Full name" id="nameInput" required></div>
-            <div class="input-group"><input type="email" placeholder="Email address" id="emailInput" required></div>
-            <div class="input-group"><input type="tel" placeholder="Phone number" id="phoneInput"></div>
-            <div class="input-group"><textarea rows="4" placeholder="Project inquiry, collaboration, or job opportunity..." id="msgInput"></textarea></div>
-            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> Send message</button>
-          </form>
-          <p class="form-note"><i class="fas fa-lock"></i> I'll respond within 24‑48 hours.</p>
+      </div>
+
+      <!-- Featured project gallery thumbnails -->
+      <div id="featured-gallery" class="project-thumbs">
+        <img src="images/omodae5.png" alt="Omoda E5 exterior" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images/omodahehe.jpeg" alt="Omoda E5 side view" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images/interior.jpeg" alt="Vehicle interior setup" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images/full_sistem_elektronik.jpeg" alt="Full system integration" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images/konektor_intercept.jpeg" alt="ADAS connector" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+
+      <!-- Featured project video -->
+      <div id="featured-video" class="video-section">
+        <h3 class="video-title">Vehicle in Action</h3>
+        <div class="video-grid">
+          <div class="video-wrap">
+            <video controls preload="metadata">
+              <source src="images/vidomodafull.mp4" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
+          <div class="video-wrap">
+            <video controls preload="metadata">
+              <source src="images/vidomodanodriver.mp4" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="projects">
+      <p class="eyebrow">Projects</p>
+      <h2 class="section-title">What I've built</h2>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>Basketball Robot</h3>
+          <span class="project-doc-date">KRI ABU Robocon 2025</span>
+        </header>
+        <p class="project-doc-overview">A high-speed robot that throws basketballs into a hoop with precision. Won 1st place nationally and Best Strategy Award.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Design a ball-throwing mechanism with consistent accuracy under competition conditions, coordinating multiple distributed controllers.</p></div>
+          <div><span class="field-label">What I did</span><p>Wrote STM32 firmware for the throwing mechanism and robot kinematics, synchronized distributed controllers via CAN bus, UART, and Ethernet UDP.</p></div>
+          <div><span class="field-label">Stack</span><p>STM32 · CAN Bus · UART · Ethernet UDP</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/basket.jpeg" alt="Basketball robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/krai1.jpeg" alt="KRI champion team" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/krai2.jpeg" alt="KRI champion team" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>Waste Sorting Robot</h3>
+          <span class="project-doc-date">KRTMI 2024</span>
+        </header>
+        <p class="project-doc-overview">A robot that identifies and sorts mixed waste into five categories on a conveyor. Won 1st place nationally.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Sort mixed waste accurately under competition time pressure, with no human intervention from pickup to final bin.</p></div>
+          <div><span class="field-label">What I did</span><p>Programmed motor kinematics on STM32, fused LiDAR with odometry data using a complementary filter, and integrated the object-detection pipeline on Jetson TX2.</p></div>
+          <div><span class="field-label">Stack</span><p>STM32 · ROS1 · Jetson TX2 · LiDAR · OpenCV</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/robotpemilah_romusa.jpeg" alt="Waste sorting robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/robotpemilah_romusa1.jpeg" alt="Waste sorting robot close-up" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/romusarodi.jpeg" alt="Romusa robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>Feeder Robot</h3>
+          <span class="project-doc-date">KRTMI 2024</span>
+        </header>
+        <p class="project-doc-overview">A companion robot that loads waste onto a vibrating conveyor, synchronized with the sorting robot via UART.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Move waste into position for sorting while staying in lockstep with the main robot's control cycle.</p></div>
+          <div><span class="field-label">What I did</span><p>Implemented 3-omniwheel kinematics on STM32, built the UART master–slave protocol between STM32 and ESP32, and wrote the joystick control layer.</p></div>
+          <div><span class="field-label">Stack</span><p>STM32 · ESP32 · UART · PS5 Joystick</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/robotpengumpan_rody.png" alt="Feeder robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/robotpengumpan_rody1.png" alt="Feeder robot side view" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/robotpengumpan_rody2.png" alt="Feeder robot detail" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>RAISA — Medical Assistant Robot</h3>
+          <span class="project-doc-date">ITS</span>
+        </header>
+        <p class="project-doc-overview">A mobile robot assistant for hospital environments, built in collaboration with Universitas Airlangga's medical faculty.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Integrate motor control, battery management, and network communication into one reliable mobile platform.</p></div>
+          <div><span class="field-label">What I did</span><p>STM32 3-omniwheel kinematics, RS485 communication to JK BMS for battery diagnostics, CANopen interface to ZLAC8015D BLDC motor drivers, UDP networking over Ethernet.</p></div>
+          <div><span class="field-label">Stack</span><p>STM32 · CANopen · RS485 · BLDC · UDP/Ethernet</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/raisa.jpeg" alt="RAISA medical robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/raisa2.png" alt="RAISA robot in lab" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>Autonomous Towing Robot</h3>
+          <span class="project-doc-date">Internship · CV Manufaktur Robot Industri · 2025</span>
+        </header>
+        <p class="project-doc-overview">An autonomous electric towing vehicle for industrial logistics, converting a commercial platform into a self-driving transport unit.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Enable a production towing vehicle to navigate autonomously in a factory environment without human operation.</p></div>
+          <div><span class="field-label">What I did</span><p>Wired the full electrical system, implemented steering firmware on STM32 communicating with a Beckhoff PLC via EtherCAT.</p></div>
+          <div><span class="field-label">Stack</span><p>STM32 · EtherCAT · Beckhoff PLC · Motor Control</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/eps_towing.jpeg" alt="EPS towing system" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/eps_towing1.jpeg" alt="EPS towing detail" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/eps_towing2.jpeg" alt="EPS towing assembly" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/paneltowing.jpeg" alt="Towing control panel" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>Pipe Inspection Robot</h3>
+          <span class="project-doc-date">Internship · CV Manufaktur Robot Industri · 2025</span>
+        </header>
+        <p class="project-doc-overview">A robot that navigates inside pipes for visual inspection, designed to access areas where manual inspection is impractical.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Inspect pipe interiors without disassembly or manual entry.</p></div>
+          <div><span class="field-label">What I did</span><p>Implemented low-level motor control firmware and UART-based telemetry communication.</p></div>
+          <div><span class="field-label">Stack</span><p>STM32 · UART · Motor Control</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/robotpipa.png" alt="Pipe crawling robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/robotpipa1.jpeg" alt="Pipe robot assembly" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/robotpipa2.png" alt="Pipe robot detail" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>Palm Oil Tank Inspection Robot</h3>
+          <span class="project-doc-date">Internship · CV Manufaktur Robot Industri · 2025</span>
+        </header>
+        <p class="project-doc-overview">An agricultural robot that inspects the inside of palm oil storage tanks for fungus using an Oto spectrometer sensor.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Detect fungal contamination inside storage tanks that are hazardous for human entry.</p></div>
+          <div><span class="field-label">What I did</span><p>Developed embedded firmware for the mobile platform and interfaced the spectrometer sensor for automated scanning.</p></div>
+          <div><span class="field-label">Stack</span><p>STM32 · Oto Spectrometer · Sensor Integration</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/robotsawit.jpeg" alt="Palm oil robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/robotsawit1.jpeg" alt="Robot mechanism" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/robotsawit3.jpeg" alt="Robot detail" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/sawit2.jpeg" alt="Robot assembly" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>Digital Twin Robot</h3>
+          <span class="project-doc-date">KRTMI 2023</span>
+        </header>
+        <p class="project-doc-overview">A remote-controlled 4-omniwheel platform operated via Bluetooth with a PS4 controller. Custom PCB power distribution and clean wiring.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Build a reliable teleoperated drive platform with a serviceable electrical design — no jumper-wire mess.</p></div>
+          <div><span class="field-label">What I did</span><p>Designed the power distribution PCB, wired the full electrical system for motors, servos, and battery, and wrote the STM32 master controller.</p></div>
+          <div><span class="field-label">Stack</span><p>ESP32 · STM32 · KiCad · Bluetooth</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/robotdigitaltwin.jpeg" alt="Digital twin robot" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/kri_ma_tim_winner.jpeg" alt="KRI champion team" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+
+      <article class="project-doc">
+        <header class="project-doc-header">
+          <h3>FPGA Hardware Accelerator for Motor Control</h3>
+          <span class="project-doc-date">2024</span>
+        </header>
+        <p class="project-doc-overview">A hardware-level PID controller implemented in Verilog HDL for deterministic DC motor speed control on FPGA.</p>
+        <div class="project-doc-grid">
+          <div><span class="field-label">Problem</span><p>Achieve deterministic, low-latency motor control that software-based PID cannot guarantee.</p></div>
+          <div><span class="field-label">What I did</span><p>Designed the PID control loop in Verilog and validated on a Xilinx FPGA, interfaced UART communication between the FPGA and a PC for real-time tuning.</p></div>
+          <div><span class="field-label">Stack</span><p>Verilog · FPGA · UART · PID Control</p></div>
+        </div>
+        <div class="project-thumbs">
+          <img src="images/softwareuartkefpga.jpeg" alt="UART to FPGA interface" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+          <img src="images/fpga.jpeg" alt="FPGA board" class="project-thumb" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section id="gallery" class="gallery">
+      <p class="eyebrow">Gallery</p>
+      <h2 class="section-title">From the lab and the field</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('images/fullsistemkpbrin.jpeg')">
+          <img src="images/fullsistemkpbrin.jpeg" alt="Full system Omoda E5" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/fullsistemkpbrin1.jpeg')">
+          <img src="images/fullsistemkpbrin1.jpeg" alt="System integration" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/fullteamkpbrin.jpeg')">
+          <img src="images/fullteamkpbrin.jpeg" alt="KPB RIN research team" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/boxelektronik.jpeg')">
+          <img src="images/boxelektronik.jpeg" alt="Electronics enclosure" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/full_sistem_elektronik.jpeg')">
+          <img src="images/full_sistem_elektronik.jpeg" alt="Full electronics system" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/konektor_intercept.jpeg')">
+          <img src="images/konektor_intercept.jpeg" alt="ADAS connector intercept" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/kpbrin.jpeg')">
+          <img src="images/kpbrin.jpeg" alt="KPB RIN vehicle test" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/hadrwarekpbrin.jpeg')">
+          <img src="images/hadrwarekpbrin.jpeg" alt="KPB RIN hardware setup" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/towingauto.png')">
+          <img src="images/towingauto.png" alt="Autonomous towing platform" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/interior.jpeg')">
+          <img src="images/interior.jpeg" alt="Vehicle interior testing" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/mapforomoda.jpeg')">
+          <img src="images/mapforomoda.jpeg" alt="Navigation map for Omoda E5" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/eps_towing2.jpeg')">
+          <img src="images/eps_towing2.jpeg" alt="EPS towing system" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="experience">
+      <p class="eyebrow">Experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Electrical Engineering Intern</h3>
+              <span class="timeline-date">Aug – Dec 2025</span>
+            </div>
+            <p class="timeline-org">CV Manufaktur Robot Industri</p>
+            <p class="timeline-summary">Executed electrical wiring and wrote embedded firmware for three industrial robot projects.</p>
+            <details>
+              <summary>Details</summary>
+              <ul>
+                <li><strong>Autonomous Towing:</strong> Wired the electrical system and implemented STM32 steering firmware communicating with a Beckhoff PLC via EtherCAT for an autonomous electric towing vehicle.</li>
+                <li><strong>Pipe Inspection Robot:</strong> Implemented low-level motor control firmware and UART telemetry for a robot that navigates inside pipes.</li>
+                <li><strong>Palm Oil Tank Robot:</strong> Developed firmware for an agricultural robot interfacing an Oto spectrometer sensor for automated fungus detection in storage tanks.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Research Intern</h3>
+              <span class="timeline-date">Jan – Feb 2025</span>
+            </div>
+            <p class="timeline-org">Pusat Riset Mekatronika Cerdas · BRIN</p>
+            <p class="timeline-summary">Contributed to the embedded architecture for a visually impaired assistant robot.</p>
+            <details>
+              <summary>Details</summary>
+              <ul>
+                <li>Designed the embedded hardware architecture for the robot platform.</li>
+                <li>Implemented ROS nodes on an NVIDIA Jetson Orin to coordinate Dynamixel servos and vibration motors for haptic feedback.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Head of Programming Division</h3>
+              <span class="timeline-date">Aug 2023 – Aug 2025</span>
+            </div>
+            <p class="timeline-org">RIVAL ITS Robotics Team</p>
+            <p class="timeline-summary">Led the navigation and control software for national competition robots.</p>
+            <details>
+              <summary>Details</summary>
+              <ul>
+                <li>Developed autonomous navigation stack for KRTMI robots using ROS1/ROS2, LiDAR odometry, and sensor fusion.</li>
+                <li>Programmed STM32 for motor kinematics (omniwheel & differential drive), UART master–slave communication, and CAN bus interfacing.</li>
+                <li>Integrated OpenCV with Jetson TX2 for the waste-sorting robot, reaching 95% detection accuracy.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Head of Internal Division</h3>
+              <span class="timeline-date">Dec 2024 – Dec 2025</span>
+            </div>
+            <p class="timeline-org">Microelectronics and Embedded Systems Laboratory (MEST) · ITS</p>
+            <p class="timeline-summary">Coordinated laboratory operations and assistant development activities.</p>
+            <details>
+              <summary>Details</summary>
+              <ul>
+                <li>Supervised lab sessions on electronic circuit theory and debugging technique.</li>
+                <li>Organized internal events and team-building programs to strengthen collaboration among laboratory assistants.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Expert Staff, Research & Technology</h3>
+              <span class="timeline-date">May 2024 – May 2025</span>
+            </div>
+            <p class="timeline-org">ITS Robotics Student Activity Unit (UKM Robotika ITS)</p>
+            <p class="timeline-summary">Organized workshops on ROS/ROS2 and embedded systems for new members.</p>
+            <details>
+              <summary>Details</summary>
+              <ul>
+                <li>Ran workshops on ROS, ROS2, and embedded systems fundamentals for 40+ students.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements" class="achievements">
+      <p class="eyebrow">Achievements</p>
+      <h2 class="section-title">Competition record</h2>
+
+      <div class="achv-timeline">
+        <div class="achv-year">
+          <h3>2025</h3>
+          <ul>
+            <li>Indonesian Robot Contest (KRI) — ABU Robocon National, 1st Place</li>
+            <li>KRI ABU Robocon — Best Strategy Award</li>
+          </ul>
+        </div>
+        <div class="achv-year">
+          <h3>2024</h3>
+          <ul>
+            <li>Indonesian Robot Contest (KRI) — KRTMI National, 1st Place</li>
+          </ul>
+        </div>
+        <div class="achv-year">
+          <h3>2023</h3>
+          <ul>
+            <li>Indonesian Robot Contest (KRI) — KRTMI National, 4th Place</li>
+            <li>KRI Regional Level — KRTMI, 2nd Place</li>
+          </ul>
+        </div>
+        <div class="achv-year">
+          <h3>2021</h3>
+          <ul>
+            <li>KSN South Sumatra — Physics Olympiad, 1st Place (Province)</li>
+            <li>KSN Ogan Komering Ilir — Physics Olympiad, 3rd Place (Regency)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section id="resume" class="resume">
+      <p class="eyebrow">Resume</p>
+      <h2 class="section-title">Curriculum vitae</h2>
+      <div class="resume-frame">
+        <iframe src="cv/my_cv.pdf" title="Muhammad Hafidzh resume preview" loading="lazy"></iframe>
+      </div>
+      <a href="cv/my_cv.pdf" download class="btn btn-primary">Download resume</a>
+    </section>
+
   </div>
 </main>
 
 <footer>
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-name">Muhammad Hafidzh</p>
+      <p class="footer-role">Electrical Engineering Student · ITS</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="https://linkedin.com/in/muhammadhafidzh" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+      <li><a href="https://github.com/muhafidzh" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></li>
+      <li><a href="mailto:hafidzhhabsy04@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+      <li><a href="tel:+6281379322324"><i class="fa-solid fa-phone"></i> Phone</a></li>
+    </ul>
+  </div>
   <div class="container">
-    <p>© 2025 Muhammad Hafidzh — Electrical Engineering & Robotics Portfolio. Ready for full‑time opportunities starting 2026.</p>
-    <p><i class="fas fa-certificate"></i> KRTMI National Champion · RIVAL Robotics · Open to embedded & robotics engineering roles.</p>
+    <p class="footer-copy">&copy; <span id="year"></span> Muhammad Hafidzh. All rights reserved.</p>
   </div>
 </footer>
 
-<button class="back2top" id="back2topBtn"><i class="fas fa-arrow-up"></i></button>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()" style="display:none">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 <script src="js/script.js"></script>
 </body>
